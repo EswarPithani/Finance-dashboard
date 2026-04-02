@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
-import config from '../config';
+import config from '../config'; 
 
 const API_URL = process.env.NODE_ENV === 'production' 
     ? 'https://finance-dashboard-api-mrtt.onrender.com'
