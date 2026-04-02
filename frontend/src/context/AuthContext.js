@@ -3,7 +3,11 @@ import axios from 'axios';
 import toast from 'react-hot-toast';
 import config from '../config';
 
-axios.defaults.baseURL = config.apiUrl;
+const API_URL = process.env.NODE_ENV === 'production' 
+    ? 'https://finance-dashboard-api-mrtt.onrender.com'
+    : 'http://localhost:5000';
+
+axios.defaults.baseURL = API_URL;
 
 const AuthContext = createContext();
 
