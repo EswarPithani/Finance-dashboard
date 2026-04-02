@@ -231,64 +231,6 @@ cd frontend
 npm install
 npm start
 
-
-**Project Structure:**
-
-finance-dashboard-zorvyn/
-├── backend/
-│   ├── src/
-│   │   ├── config/
-│   │   │   └── database.js
-│   │   ├── models/
-│   │   │   ├── User.js
-│   │   │   └── Transaction.js
-│   │   ├── middleware/
-│   │   │   ├── auth.js
-│   │   │   └── errorHandler.js
-│   │   ├── controllers/
-│   │   │   ├── authController.js
-│   │   │   ├── transactionController.js
-│   │   │   └── dashboardController.js
-│   │   ├── routes/
-│   │   │   ├── authRoutes.js
-│   │   │   ├── transactionRoutes.js
-│   │   │   └── dashboardRoutes.js
-│   │   ├── utils/
-│   │   │   ├── validators.js
-│   │   │   └── helpers.js
-│   │   └── app.js
-│   ├── scripts/
-│   │   ├── createDummyUsers.js
-│   │   └── createSampleTransactions.js
-│   ├── .env.example
-│   ├── package.json
-│   └── server.js
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Navbar.js
-│   │   │   └── PrivateRoute.js
-│   │   ├── pages/
-│   │   │   ├── Login.js
-│   │   │   ├── Register.js
-│   │   │   ├── Dashboard.js
-│   │   │   └── Transactions.js
-│   │   ├── context/
-│   │   │   └── AuthContext.js
-│   │   ├── services/
-│   │   │   └── api.js
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── index.css
-│   ├── .env.example
-│   ├── package.json
-│   └── README.md
-├── .gitignore
-└── README.md
-
-
 # Setup and Installation
 
 ## Prerequisites
