@@ -22,24 +22,25 @@ if (process.env.NODE_ENV === 'development') {
 app.use(helmet());
 
 const allowedOrigins = [
-    'http://localhost:3000',
-    'http://localhost:3001',
-    'https://finance-dashboard-yj5b.vercel.app',
-    'https://finance-dashboard-yj5b.vercel.app/',
-    'https://finance-dashboard-yj5b-git-main.vercel.app',
-    'https://finance-dashboard-yj5b-*.vercel.app'
+    'http://localhost:3000',                         
+    'https://finance-dashboard-front.vercel.app',     
+    'https://finance-dashboard-front-git-main.vercel.app', 
+    'https://finance-dashboard-front.vercel.app'    
 ];
 
 app.use(cors({
     origin: function(origin, callback) {
         if (!origin) return callback(null, true);
         
-        if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV !== 'production') {
-            callback(null, true);
-        } else {
-            console.log('CORS blocked origin:', origin);
-            callback(new Error('Not allowed by CORS'));
+        if (allowedOrigins.indexOf(origin) === -1) {
+            console.log(`Origin ${origin} not allowed by CORS`);
+            if (process.env.NODE_ENV === 'development') {
+                return callback(null, true);
+            }
+            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
         }
+        return callback(null, true);
     },
     credentials: true,
     optionsSuccessStatus: 200
@@ -53,18 +54,6 @@ app.use((req, res, next) => {
 app.use('/api/auth', auth);
 app.use('/api/transactions', transactions);
 app.use('/api/dashboard', dashboard);
-
-app.get('/', (req, res) => {
-    res.json({
-        message: 'Finance Dashboard API is running',
-        version: '1.0.0',
-        endpoints: {
-            auth: '/api/auth',
-            transactions: '/api/transactions',
-            dashboard: '/api/dashboard'
-        }
-    });
-});
 
 app.use(errorHandler);
 
