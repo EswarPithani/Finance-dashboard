@@ -47,6 +47,150 @@ The backend is built with Node.js and Express.js, uses MongoDB Atlas for data pe
 
 ---
 
+# Project Structure
+finance-dashboard/
+│
+├── backend/
+│ ├── src/
+│ │ ├── config/
+│ │ │ └── database.js
+│ │ ├── models/
+│ │ │ ├── User.js
+│ │ │ └── Transaction.js
+│ │ ├── middleware/
+│ │ │ ├── auth.js
+│ │ │ └── errorHandler.js
+│ │ ├── controllers/
+│ │ │ ├── authController.js
+│ │ │ ├── transactionController.js
+│ │ │ └── dashboardController.js
+│ │ ├── routes/
+│ │ │ ├── authRoutes.js
+│ │ │ ├── transactionRoutes.js
+│ │ │ └── dashboardRoutes.js
+│ │ ├── utils/
+│ │ │ ├── validators.js
+│ │ │ └── helpers.js
+│ │ ├── scripts/
+│ │ │ ├── createDummyUsers.js
+│ │ │ └── createSampleTransactions.js
+│ │ └── app.js
+│ ├── .env.example
+│ ├── .gitignore
+│ ├── package.json
+│ ├── package-lock.json
+│ └── server.js
+│
+├── frontend/
+│ ├── public/
+│ │ ├── index.html
+│ │ └── favicon.ico
+│ ├── src/
+│ │ ├── components/
+│ │ │ ├── Navbar.js
+│ │ │ └── PrivateRoute.js
+│ │ ├── pages/
+│ │ │ ├── Login.js
+│ │ │ ├── Register.js
+│ │ │ ├── Dashboard.js
+│ │ │ └── Transactions.js
+│ │ ├── context/
+│ │ │ └── AuthContext.js
+│ │ ├── services/
+│ │ │ └── api.js
+│ │ ├── App.js
+│ │ ├── index.js
+│ │ └── index.css
+│ ├── .env.example
+│ ├── .gitignore
+│ ├── package.json
+│ ├── package-lock.json
+│ ├── tailwind.config.js
+│ ├── postcss.config.js
+│
+├── .gitignore
+└── README.md
+
+
+## File Descriptions
+
+### Backend Files
+
+| File/Folder | Description |
+|-------------|-------------|
+| `backend/src/config/database.js` | MongoDB connection configuration |
+| `backend/src/models/User.js` | User schema with role and status fields |
+| `backend/src/models/Transaction.js` | Transaction schema with amount, type, category |
+| `backend/src/middleware/auth.js` | JWT verification and role authorization middleware |
+| `backend/src/middleware/errorHandler.js` | Centralized error handling middleware |
+| `backend/src/controllers/authController.js` | User registration, login, profile logic |
+| `backend/src/controllers/transactionController.js` | CRUD operations for transactions |
+| `backend/src/controllers/dashboardController.js` | Dashboard summary and analytics logic |
+| `backend/src/routes/authRoutes.js` | Authentication API endpoints |
+| `backend/src/routes/transactionRoutes.js` | Transaction API endpoints |
+| `backend/src/routes/dashboardRoutes.js` | Dashboard API endpoints |
+| `backend/src/utils/validators.js` | Input validation rules using express-validator |
+| `backend/src/utils/helpers.js` | Utility functions for formatting and calculations |
+| `backend/src/scripts/createDummyUsers.js` | Script to seed demo users |
+| `backend/src/scripts/createSampleTransactions.js` | Script to seed sample transactions |
+| `backend/src/app.js` | Express application configuration |
+| `backend/server.js` | Server entry point |
+| `backend/.env.example` | Template for environment variables |
+| `backend/package.json` | Backend dependencies and scripts |
+
+### Frontend Files
+
+| File/Folder | Description |
+|-------------|-------------|
+| `frontend/public/index.html` | HTML template |
+| `frontend/src/components/Navbar.js` | Navigation bar with logout button |
+| `frontend/src/components/PrivateRoute.js` | Protected route wrapper component |
+| `frontend/src/pages/Login.js` | User login page |
+| `frontend/src/pages/Register.js` | User registration page |
+| `frontend/src/pages/Dashboard.js` | Dashboard with charts and summary cards |
+| `frontend/src/pages/Transactions.js` | Transaction management with CRUD operations |
+| `frontend/src/context/AuthContext.js` | Authentication state management |
+| `frontend/src/services/api.js` | Axios configuration for API calls |
+| `frontend/src/App.js` | Main application component with routing |
+| `frontend/src/index.js` | React DOM entry point |
+| `frontend/src/index.css` | Tailwind CSS styles |
+| `frontend/tailwind.config.js` | Tailwind CSS configuration |
+| `frontend/postcss.config.js` | PostCSS configuration |
+| `frontend/.env.example` | Template for frontend environment variables |
+| `frontend/package.json` | Frontend dependencies and scripts |
+
+## Key Directories Explained
+
+### Backend `src/` Directory
+
+- **config/**: Contains database connection setup and configuration files
+- **models/**: Mongoose schemas defining data structure and validation
+- **middleware/**: Express middleware functions for auth, error handling, etc.
+- **controllers/**: Business logic for handling requests and responses
+- **routes/**: API route definitions linking URLs to controllers
+- **utils/**: Helper functions, validators, and reusable utilities
+- **scripts/**: Database seeding scripts for development and testing
+
+### Frontend `src/` Directory
+
+- **components/**: Reusable React components used across multiple pages
+- **pages/**: Complete page components that represent routes
+- **context/**: React Context API for global state management
+- **services/**: API service layer for backend communication
+
+## File Naming Conventions
+
+| Type | Convention | Example |
+|------|------------|---------|
+| Models | PascalCase | `User.js`, `Transaction.js` |
+| Controllers | camelCase with Controller suffix | `authController.js` |
+| Routes | camelCase with Routes suffix | `authRoutes.js` |
+| Middleware | camelCase | `auth.js`, `errorHandler.js` |
+| Utilities | camelCase | `validators.js`, `helpers.js` |
+| Pages | PascalCase | `Login.js`, `Dashboard.js` |
+| Components | PascalCase | `Navbar.js`, `PrivateRoute.js` |
+
+
 ## Features Implemented
 
 ### Core Requirements (100% Complete)
