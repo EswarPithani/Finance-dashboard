@@ -47,66 +47,65 @@ The backend is built with Node.js and Express.js, uses MongoDB Atlas for data pe
 
 ---
 
-# Project Structure
 finance-dashboard/
 │
 ├── backend/
-│ ├── src/
-│ │ ├── config/
-│ │ │ └── database.js
-│ │ ├── models/
-│ │ │ ├── User.js
-│ │ │ └── Transaction.js
-│ │ ├── middleware/
-│ │ │ ├── auth.js
-│ │ │ └── errorHandler.js
-│ │ ├── controllers/
-│ │ │ ├── authController.js
-│ │ │ ├── transactionController.js
-│ │ │ └── dashboardController.js
-│ │ ├── routes/
-│ │ │ ├── authRoutes.js
-│ │ │ ├── transactionRoutes.js
-│ │ │ └── dashboardRoutes.js
-│ │ ├── utils/
-│ │ │ ├── validators.js
-│ │ │ └── helpers.js
-│ │ ├── scripts/
-│ │ │ ├── createDummyUsers.js
-│ │ │ └── createSampleTransactions.js
-│ │ └── app.js
-│ ├── .env.example
-│ ├── .gitignore
-│ ├── package.json
-│ ├── package-lock.json
-│ └── server.js
+│   ├── src/
+│   │   ├── config/
+│   │   │   └── database.js
+│   │   ├── models/
+│   │   │   ├── User.js
+│   │   │   └── Transaction.js
+│   │   ├── middleware/
+│   │   │   ├── auth.js
+│   │   │   └── errorHandler.js
+│   │   ├── controllers/
+│   │   │   ├── authController.js
+│   │   │   ├── transactionController.js
+│   │   │   └── dashboardController.js
+│   │   ├── routes/
+│   │   │   ├── authRoutes.js
+│   │   │   ├── transactionRoutes.js
+│   │   │   └── dashboardRoutes.js
+│   │   ├── utils/
+│   │   │   ├── validators.js
+│   │   │   └── helpers.js
+│   │   ├── scripts/
+│   │   │   ├── createDummyUsers.js
+│   │   │   └── createSampleTransactions.js
+│   │   └── app.js
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── package.json
+│   ├── package-lock.json
+│   └── server.js
 │
 ├── frontend/
-│ ├── public/
-│ │ ├── index.html
-│ │ └── favicon.ico
-│ ├── src/
-│ │ ├── components/
-│ │ │ ├── Navbar.js
-│ │ │ └── PrivateRoute.js
-│ │ ├── pages/
-│ │ │ ├── Login.js
-│ │ │ ├── Register.js
-│ │ │ ├── Dashboard.js
-│ │ │ └── Transactions.js
-│ │ ├── context/
-│ │ │ └── AuthContext.js
-│ │ ├── services/
-│ │ │ └── api.js
-│ │ ├── App.js
-│ │ ├── index.js
-│ │ └── index.css
-│ ├── .env.example
-│ ├── .gitignore
-│ ├── package.json
-│ ├── package-lock.json
-│ ├── tailwind.config.js
-│ ├── postcss.config.js
+│   ├── public/
+│   │   ├── index.html
+│   │   └── favicon.ico
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.js
+│   │   │   └── PrivateRoute.js
+│   │   ├── pages/
+│   │   │   ├── Login.js
+│   │   │   ├── Register.js
+│   │   │   ├── Dashboard.js
+│   │   │   └── Transactions.js
+│   │   ├── context/
+│   │   │   └── AuthContext.js
+│   │   ├── services/
+│   │   │   └── api.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── index.css
+│   ├── .env.example
+│   ├── .gitignore
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
 │
 ├── .gitignore
 └── README.md
