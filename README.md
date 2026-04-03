@@ -47,6 +47,8 @@ The backend is built with Node.js and Express.js, uses MongoDB Atlas for data pe
 
 ---
 
+## Project Structure
+```plaintext
 finance-dashboard/
 │
 ├── backend/
@@ -109,6 +111,7 @@ finance-dashboard/
 │
 ├── .gitignore
 └── README.md
+```
 
 ## File Descriptions
 
