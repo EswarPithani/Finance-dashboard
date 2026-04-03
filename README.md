@@ -110,7 +110,6 @@ finance-dashboard/
 ├── .gitignore
 └── README.md
 
-
 ## File Descriptions
 
 ### Backend Files
